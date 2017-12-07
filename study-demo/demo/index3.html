@@ -19,7 +19,27 @@
 	<body>
 	<div style="width: 100%; height: 100%">
 		<div class="toolbar">Toolbar</div>
-		<div class="hello">
+		<div id="hello">
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
 			<p>hehe</p>
 			<p>hehe</p>
 			<p>hehe</p>
@@ -64,10 +84,29 @@
 	
 	<script type="text/javascript" charset="utf-8">
 		var scrollable = document.getElementById("scrollable");
-		new ScrollFix(scrollable);
+		//new ScrollFix(scrollable);
 
 		function say() {
 			console.log('hello');
 		}
+		document.getElementById('scrollable').addEventListener('touchstart', function(event) {
+			console.log('scrollable touchstart');
+			var elem = event.currentTarget;
+			var startTopScroll = elem.scrollTop;
+			console.log('01--', elem.scrollTop)
+
+			if(startTopScroll <= 0)
+				elem.scrollTop = 1;
+			console.log('02--', elem.scrollTop)
+			if(startTopScroll + elem.offsetHeight >= elem.scrollHeight)
+				elem.scrollTop = elem.scrollHeight - elem.offsetHeight - 1;
+			console.log('03--', elem.scrollTop)
+
+			event.stopPropagation();
+		}, false)
+
+		document.body.addEventListener('touchstart', function() {
+			console.log('hello touchstart');
+		}, false)
 	</script>
 </html>
