@@ -5,10 +5,23 @@
 		<title>ScrollFix Demo</title>
 		<meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<style>
+			.scrollable {
+				z-index: 999;
+				background: #fff;
+			}
+		</style>
 	</head>
 	<body>
 	<div style="width: 100%; height: 100%">
 		<div class="toolbar">Toolbar</div>
+		<div class="hello">
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+			<p>hehe</p>
+		</div>
 		<div class="scrollable" id="scrollable">
 			<ul>
 				<li onclick="say()">List Item</li>
